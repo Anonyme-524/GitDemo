@@ -3,6 +3,7 @@ package com.example.gitdemo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,5 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 mTextView.setText(String.valueOf(--number));
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {//创建菜单
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
