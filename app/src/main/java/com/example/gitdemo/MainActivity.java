@@ -56,12 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_zero: {
-                number = 0;
-                mBinding.textView.setText(String.valueOf(number));
-                break;
-            }
+        if (item.getItemId() == R.id.item_zero) {//因为只有一项，所以转化为if写法
+            number = 0;
+            mBinding.textView.setText(String.valueOf(number));
         }
         return super.onOptionsItemSelected(item);
     }
