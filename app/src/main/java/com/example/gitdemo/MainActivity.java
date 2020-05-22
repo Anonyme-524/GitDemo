@@ -3,6 +3,7 @@ package com.example.gitdemo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,17 +11,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.gitdemo.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button mButtonAdd,mButtonSub;
     private TextView mTextView;
     private int number = 0;
     private static final String save_number="SAVE_NUMBER";
+    private ActivityMainBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        mBinding=ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(mBinding.getRoot());
         mButtonAdd=findViewById(R.id.button_add);
         mButtonSub=findViewById(R.id.button_sub);
         mTextView=findViewById(R.id.text_view);
